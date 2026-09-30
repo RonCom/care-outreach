@@ -1,0 +1,94 @@
+{
+  "family": "seqnet",
+  "scenario": "from 2023, 70% of ED visits and inpatient stays arrive as ambulatory",
+  "years": [
+    {
+      "year": 2022,
+      "adaptive_minus_static_auc": null,
+      "drift_share": 0.17391304347826086,
+      "drifted": [
+        "age",
+        "amb_1y",
+        "log_cost_1y",
+        "n_meds"
+      ],
+      "key_features_drifted": [],
+      "auc_last_labeled_year": 0.7138783320634804,
+      "triggered": false,
+      "change_point": null,
+      "retrained": false,
+      "promoted": false,
+      "auc_static": 0.7268672544681712,
+      "auc_adaptive": 0.7268672544681712,
+      "auc_static_no_feed_change": 0.7268672544681712
+    },
+    {
+      "year": 2023,
+      "adaptive_minus_static_auc": null,
+      "drift_share": 0.08695652173913043,
+      "drifted": [
+        "age",
+        "n_meds"
+      ],
+      "key_features_drifted": [],
+      "auc_last_labeled_year": 0.7268672544681712,
+      "triggered": false,
+      "change_point": null,
+      "retrained": false,
+      "promoted": false,
+      "auc_static": 0.7127961670708558,
+      "auc_adaptive": 0.7127961670708558,
+      "auc_static_no_feed_change": 0.7127961670708558
+    },
+    {
+      "year": 2024,
+      "adaptive_minus_static_auc": null,
+      "drift_share": 0.13043478260869565,
+      "drifted": [
+        "age",
+        "ed_1y",
+        "n_meds"
+      ],
+      "key_features_drifted": [
+        "ed_1y"
+      ],
+      "auc_last_labeled_year": 0.7127961670708558,
+      "triggered": true,
+      "change_point": 2024,
+      "retrained": false,
+      "promoted": false,
+      "auc_static": 0.7181028137933919,
+      "auc_adaptive": 0.7181028137933919,
+      "auc_static_no_feed_change": 0.7212207463010462
+    },
+    {
+      "year": 2025,
+      "adaptive_minus_static_auc": {
+        "est": 0.002994822612038983,
+        "ci95": [
+          -0.0001225911748123809,
+          0.0058164816619831776
+        ]
+      },
+      "drift_share": 0.17391304347826086,
+      "drifted": [
+        "age",
+        "ed_1y",
+        "acute_2y",
+        "n_meds"
+      ],
+      "key_features_drifted": [
+        "acute_2y",
+        "ed_1y"
+      ],
+      "auc_last_labeled_year": 0.7181028137933919,
+      "triggered": true,
+      "change_point": 2024,
+      "retrained": true,
+      "promoted": true,
+      "auc_static": 0.713346765661774,
+      "auc_adaptive": 0.716341588273813,
+      "auc_static_no_feed_change": 0.7215316990917761
+    }
+  ]
+}

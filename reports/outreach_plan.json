@@ -1,0 +1,88 @@
+{
+  "year": 2023,
+  "members": 10060,
+  "limits": {
+    "budget": 201200,
+    "hours": 804.8000000000001,
+    "home": 201
+  },
+  "untreated_events": 1790,
+  "plans": {
+    "risk_nurse": {
+      "events_averted": 60.800000000000004,
+      "spend": 48240.0,
+      "averted_per_10k": 12.603648424543946,
+      "members_reached": 804.0,
+      "mix": {
+        "nurse_call": 804
+      }
+    },
+    "risk_nurse_digital": {
+      "events_averted": 132.67200000000003,
+      "spend": 201190.0,
+      "averted_per_10k": 6.594363536955118,
+      "members_reached": 6922.0,
+      "mix": {
+        "nurse_call": 804,
+        "digital": 6118
+      }
+    },
+    "risk_nba": {
+      "events_averted": 55.176,
+      "spend": 114925.0,
+      "averted_per_10k": 4.801044159234284,
+      "members_reached": 1553.0,
+      "mix": {
+        "nurse_call": 110,
+        "med_review": 17,
+        "home_visit": 165,
+        "digital": 1261
+      }
+    },
+    "ilp_uplift": {
+      "events_averted": 106.01,
+      "spend": 200940.0,
+      "averted_per_10k": 5.2757041903055635,
+      "members_reached": 6201.0,
+      "mix": {
+        "nurse_call": 164,
+        "med_review": 318,
+        "home_visit": 1,
+        "digital": 5718
+      }
+    },
+    "ilp_known": {
+      "events_averted": 164.05599999999998,
+      "spend": 201180.0,
+      "averted_per_10k": 8.154687344666467,
+      "members_reached": 6586.0,
+      "mix": {
+        "nurse_call": 518,
+        "med_review": 137,
+        "home_visit": 3,
+        "digital": 5928
+      }
+    }
+  },
+  "ilp_uplift_vs_risk_nurse_pct": {
+    "est": 0.7435855263157893,
+    "ci95": [
+      0.5890253085795034,
+      0.9238673767451037
+    ]
+  },
+  "risk_nba_vs_risk_nurse_pct": {
+    "est": -0.09250000000000003,
+    "ci95": [
+      -0.17909706772551942,
+      -0.00657617020052331
+    ]
+  },
+  "risk_nurse_digital_vs_risk_nurse_pct": {
+    "est": 1.182105263157895,
+    "ci95": [
+      1.0606584849853813,
+      1.3403081996891992
+    ]
+  }
+}

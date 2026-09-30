@@ -1,0 +1,64 @@
+{
+  "months": 36,
+  "member_months": 30206,
+  "cost_weight": 0.0005,
+  "shift_month": 18,
+  "policies": {
+    "static": {
+      "total_value": 183.1165,
+      "events_averted": 346.72900000000004,
+      "spend": 327225.0,
+      "final_regret": 309.4585,
+      "value_months_1_12": 15.0805,
+      "value_months_13_36": 168.036,
+      "averted_months_13_36": 274.69100000000003,
+      "spend_months_13_36": 213310.0,
+      "value_before_shift": 26.271500000000003,
+      "value_after_shift": 156.84500000000003,
+      "digital_share_before": 0.3452309863419784,
+      "digital_share_after": 0.3247776198768505
+    },
+    "ts": {
+      "total_value": 234.279,
+      "events_averted": 596.349,
+      "spend": 724140.0,
+      "final_regret": 258.29600000000005,
+      "value_months_1_12": 5.332000000000004,
+      "value_months_13_36": 228.94700000000003,
+      "averted_months_13_36": 467.317,
+      "spend_months_13_36": 476740.0,
+      "value_before_shift": 23.174000000000003,
+      "value_after_shift": 211.10500000000002,
+      "digital_share_before": 0.29626866207098934,
+      "digital_share_after": 0.40828904109651415
+    },
+    "ts_discount": {
+      "total_value": 239.25150000000005,
+      "events_averted": 561.5040000000001,
+      "spend": 644505.0,
+      "final_regret": 253.32350000000002,
+      "value_months_1_12": 14.815500000000004,
+      "value_months_13_36": 224.43600000000004,
+      "averted_months_13_36": 428.346,
+      "spend_months_13_36": 407820.0,
+      "value_before_shift": 34.194,
+      "value_after_shift": 205.05750000000003,
+      "digital_share_before": 0.28934256675916104,
+      "digital_share_after": 0.3558695491580337
+    },
+    "oracle": {
+      "total_value": 492.57500000000005,
+      "events_averted": 828.9450000000002,
+      "spend": 672740.0,
+      "final_regret": 0.0,
+      "value_months_1_12": 71.30349999999999,
+      "value_months_13_36": 421.2715,
+      "averted_months_13_36": 653.0390000000001,
+      "spend_months_13_36": 463535.0,
+      "value_before_shift": 117.42249999999999,
+      "value_after_shift": 375.1525000000001,
+      "digital_share_before": 0.3770879645818237,
+      "digital_share_after": 0.6915144938262267
+    }
+  }
+}

@@ -1,0 +1,68 @@
+# ---- Data -----------------------------------------------------------------
+# Synthea synthetic patients (github.com/synthetichealth/synthea), CSV export. See README "Data".
+synthea_csv: data/synthea/csv
+data_dir: data
+min_age: 40
+years: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]   # outcome years; features use the 2 prior years
+
+# ---- Risk model (predict any ED visit or inpatient stay in the outcome year) ----
+risk:
+  train_years: [2015, 2016, 2017, 2018, 2019, 2020]
+  valid_years: [2021]
+  test_years: [2023]          # the deployment year; 2022 is the randomized pilot year
+  seq_months: 24
+  epochs: 40
+  batch_size: 256
+  lr: 0.001
+  hidden: 64
+  seed: 42
+
+# ---- Outreach programs (semi-synthetic response, see simulate.py) ----------
+actions:
+  none:        {cost: 0,   staff_hours: 0.0}
+  nurse_call:  {cost: 60,  staff_hours: 1.0}
+  med_review:  {cost: 150, staff_hours: 2.0}
+  home_visit:  {cost: 450, staff_hours: 4.0}
+  digital:     {cost: 25,  staff_hours: 0.0}
+pilot:
+  year: 2022          # plan-wide randomized pilot: every eligible member gets an action at random
+  share: 1.0
+  seed: 7
+
+# ---- Plan for the deployment year ----------------------------------------
+plan:
+  year: 2023
+  budget_per_member: 20          # $ per eligible member per year
+  staff_hours_per_member: 0.08   # care-team hours per eligible member per year
+  max_home_visit_share: 0.02     # home-visit capacity, share of members
+
+# ---- Contextual bandit (online learning over monthly cohorts) ---------------
+bandit:
+  years: [2023, 2024, 2025]
+  cost_weight: 0.0005            # reward = events averted - cost_weight x $ cost
+  prior_var: 1.0
+  noise_var: 0.15                # ~ Bernoulli variance at the base event rate
+  explore_scale: 0.25             # posterior-sample scale; chosen on months 1-12 only (see README)
+  discount: 0.97                 # monthly forgetting for ts_discount
+  shift_month: 18                # from this month on, the digital program improves (new app version)
+  seed: 11
+
+# ---- Monitoring and retraining ------------------------------------------------
+monitor:
+  reference_years: [2015, 2016, 2017, 2018, 2019, 2020]
+  score_years: [2022, 2023, 2024, 2025]
+  key_features: [ed_1y, ip_1y, acute_2y]   # drift in any of these triggers retraining
+  drift_share: 0.3               # ... as does >= 30% of monitored features drifting (Evidently)
+  auc_drop: 0.03                 # ... or when AUC on the last labeled year falls this much below validation
+
+# ---- Provider-network steering (steer.py) --------------------------------------
+steer_data: data/external          # NC physical-therapist extract from the MedicareFWA project (see README)
+steer:
+  years: [2023, 2024, 2025]
+  radius_km: 40                    # only recommend providers within this distance
+  decay_km: 8                      # default choice: gravity model distance decay
+  remote_km: 15                    # members whose nearest provider is farther than this count as remote
+  fwa_cutoff: 0.95                 # providers at or above this FWA risk percentile are out of network
+  capacity_ratio: 1.5              # steered-member slots per year = 1.5 x annual episodes, split by Medicare volume
+  prior_var: 1.0
+  seeds: [1, 2, 3, 4, 5]

@@ -1,0 +1,93 @@
+{
+  "providers_by_year": {
+    "2022": 2098,
+    "2023": 2323,
+    "2024": 2562
+  },
+  "excluded_by_fwa_score": 68,
+  "episodes": 1369,
+  "episodes_by_year": {
+    "2023": 427,
+    "2024": 470,
+    "2025": 472
+  },
+  "cost_per_patient_quartiles": [
+    303.88847274350735,
+    440.7967390976627,
+    650.1266018040733
+  ],
+  "totals_mean": {
+    "cheapest": {
+      "expected_saving": 54422.50494860658,
+      "recommended": 1052.0,
+      "accepted": 324.2,
+      "default_cost": 656865.8134575696
+    },
+    "lp_learn": {
+      "expected_saving": 106942.86573091133,
+      "recommended": 1052.8,
+      "accepted": 613.6,
+      "default_cost": 656865.8134575696
+    },
+    "lp_prior": {
+      "expected_saving": 105430.90940215233,
+      "recommended": 1051.0,
+      "accepted": 590.2,
+      "default_cost": 656865.8134575696
+    },
+    "none": {
+      "expected_saving": 0.0,
+      "recommended": 0.0,
+      "accepted": 0.0,
+      "default_cost": 656865.8134575696
+    },
+    "oracle": {
+      "expected_saving": 108922.01955272099,
+      "recommended": 1051.0,
+      "accepted": 619.8,
+      "default_cost": 656865.8134575696
+    }
+  },
+  "saving_per_episode": {
+    "cheapest": 39.753473300662215,
+    "lp_learn": 78.11750601235306,
+    "lp_prior": 77.01308210529754,
+    "none": 0.0,
+    "oracle": 79.56319908891234
+  },
+  "saving_pct_of_default_cost": {
+    "cheapest": 0.08285178469273773,
+    "lp_learn": 0.16280778134577,
+    "lp_prior": 0.16050600783619967,
+    "none": 0.0,
+    "oracle": 0.16582080741785604
+  },
+  "lp_learn_vs_lp_prior_pct_by_seed": {
+    "1": 0.0108,
+    "2": 0.012,
+    "3": 0.014,
+    "4": 0.0198,
+    "5": 0.0151
+  },
+  "lp_learn_vs_lp_prior_pct_after_year1_by_seed": {
+    "1": 0.025,
+    "2": 0.0131,
+    "3": 0.0166,
+    "4": 0.026,
+    "5": 0.0265
+  },
+  "lp_prior_vs_cheapest_pct_by_seed": {
+    "1": 0.9373,
+    "2": 0.9373,
+    "3": 0.9373,
+    "4": 0.9373,
+    "5": 0.9373
+  },
+  "share_of_oracle": {
+    "cheapest": 0.4996464917937435,
+    "lp_learn": 0.9818296260945502,
+    "lp_prior": 0.9679485363482554,
+    "none": 0.0,
+    "oracle": 1.0
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "pilot_members": 9996,
+  "pilot_event_rate": 0.1672669067627051,
+  "selection": {
+    "s_learner": {
+      "ipw_events_per_member_budgeted_plan": 0.16303300389053973,
+      "ipw_events_per_member_best_program_for_all": 0.17261547982346134
+    },
+    "t_learner": {
+      "ipw_events_per_member_budgeted_plan": 0.18039746232622414,
+      "ipw_events_per_member_best_program_for_all": 0.1636488729388493
+    },
+    "dr_learner": {
+      "ipw_events_per_member_budgeted_plan": 0.1855895680841374,
+      "ipw_events_per_member_best_program_for_all": 0.16898253473951286
+    },
+    "anchored": {
+      "ipw_events_per_member_budgeted_plan": 0.17207023582543182,
+      "ipw_events_per_member_best_program_for_all": 0.17641227404747165
+    },
+    "anchored_constant": {
+      "ipw_events_per_member_budgeted_plan": 0.17214457614570902,
+      "ipw_events_per_member_best_program_for_all": 0.1895634944203309
+    },
+    "no_outreach": {
+      "ipw_events_per_member_budgeted_plan": 0.1795718287314926
+    }
+  },
+  "chosen": "s_learner",
+  "deployment_year_check": {
+    "top_action_agreement": 0.2820079522862823,
+    "share_of_oracle_benefit": 0.634094236816207,
+    "share_nurse_call_for_all": 0.556635702455534
+  }
+}
